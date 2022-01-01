@@ -1,7 +1,6 @@
 package guices.gzguice;
 
 import com.google.inject.internal.*;
-import com.google.inject.internal.util.ToStringBuilder;
 import com.google.inject.spi.Dependency;
 
 final class GZConstantFactory<T> implements GZInternalFactory<T> {

@@ -1,12 +1,11 @@
 package guices.gzguice;
 
+import com.google.common.collect.*;
 import com.google.inject.*;
-import com.google.inject.Module;
 import com.google.inject.internal.*;
-import com.google.inject.internal.util.*;
-import com.google.inject.internal.util.Objects;
 import com.google.inject.spi.*;
 import com.google.inject.util.Providers;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;
@@ -160,7 +159,7 @@ final class GZInjectorImpl implements GZInjector {
     }
 
     public Injector createChildInjector(GZModule... modules) {
-        return createChildInjector(ImmutableList.of(modules));
+        return createChildInjector((GZModule) ImmutableList.of(modules));
     }
 
     /**
@@ -306,7 +305,7 @@ final class GZInjectorImpl implements GZInjector {
                 GZInjectorImpl.ProviderBindingImpl<?> o = (GZInjectorImpl.ProviderBindingImpl<?>)obj;
                 return getKey().equals(o.getKey())
                         && getScoping().equals(o.getScoping())
-                        && Objects.equal(providedBinding, o.providedBinding);
+                        && Objects.equals(providedBinding, o.providedBinding);
             } else {
                 return false;
             }
@@ -314,7 +313,7 @@ final class GZInjectorImpl implements GZInjector {
 
         @Override
         public int hashCode() {
-            return Objects.hashCode(getKey(), getScoping(), providedBinding);
+            return Objects.hash(getKey(), getScoping(), providedBinding);
         }
     }
 
@@ -430,7 +429,7 @@ final class GZInjectorImpl implements GZInjector {
                 GZInjectorImpl.ConvertedConstantBindingImpl<?> o = (GZInjectorImpl.ConvertedConstantBindingImpl<?>)obj;
                 return getKey().equals(o.getKey())
                         && getScoping().equals(o.getScoping())
-                        && Objects.equal(value, o.value);
+                        && Objects.equals(value, o.value);
             } else {
                 return false;
             }
@@ -438,7 +437,7 @@ final class GZInjectorImpl implements GZInjector {
 
         @Override
         public int hashCode() {
-            return Objects.hashCode(getKey(), getScoping(), value);
+            return Objects.hash(getKey(), getScoping(), value);
         }
     }
 

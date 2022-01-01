@@ -1,8 +1,7 @@
 package helper;
 
-import annotations.GZNonNull;
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import annotations.gzannotations.GZNonNull;
+import com.google.inject.internal.Nullable;
 
 public final class GZPreconditions {
 
@@ -21,7 +20,7 @@ public final class GZPreconditions {
         return reference;
     }
 
-    public static <T extends @NonNull Object> T checkNotNull(@GZNonNull T reference, @Nullable Object errorMessage) {
+    public static <T extends Object> T checkNotNull(@GZNonNull T reference, @Nullable Object errorMessage) {
         if (reference == null) {
             throw new NullPointerException(String.valueOf(errorMessage));
         }

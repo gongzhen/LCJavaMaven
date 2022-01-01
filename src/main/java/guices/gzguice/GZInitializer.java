@@ -1,10 +1,10 @@
 package guices.gzguice;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.inject.Stage;
 import com.google.inject.TypeLiteral;
 import com.google.inject.internal.*;
-import com.google.inject.internal.util.Lists;
-import com.google.inject.internal.util.Maps;
 import com.google.inject.spi.InjectionPoint;
 
 import java.util.Map;

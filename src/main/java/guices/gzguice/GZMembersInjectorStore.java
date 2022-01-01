@@ -1,16 +1,7 @@
 package guices.gzguice;
 
-import com.google.inject.ConfigurationException;
 import com.google.inject.TypeLiteral;
 import com.google.inject.internal.*;
-import com.google.inject.internal.util.ImmutableList;
-import com.google.inject.internal.util.Lists;
-import com.google.inject.spi.InjectionPoint;
-import com.google.inject.spi.TypeListenerBinding;
-
-import java.lang.reflect.Field;
-import java.util.List;
-import java.util.Set;
 
 final class GZMembersInjectorStore {
 //    private final InjectorImpl injector;

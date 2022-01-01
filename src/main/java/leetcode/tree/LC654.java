@@ -1,10 +1,11 @@
 package leetcode.tree;
 
-import com.sun.source.tree.Tree;
+import helper.PrintUtils;
 import helper.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.function.Supplier;
 
 public class LC654 {
 
@@ -28,7 +29,7 @@ public class LC654 {
             }
             stack.push(node);
         }
-        return !stack.isEmpty() ? stack.peek() : null;
+        return !stack.isEmpty() ? stack.removeLast() : null;
     }
 
 
@@ -63,6 +64,10 @@ public class LC654 {
     }
 
     public static void main(String[] args) {
-
+        Supplier<LC654> supplier = () -> {
+            return new LC654();
+        };
+        TreeNode res = supplier.get().bfs(new int[]{3,2,1,6,0,5});
+        PrintUtils.printString("res: " + res.val);
     }
 }

@@ -35,21 +35,21 @@
 <!--            <artifactId>slf4j-log4j12</artifactId>-->
 <!--            <version>1.5.6</version>-->
 <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.google.inject</groupId>-->
-        <!--            <artifactId>guice</artifactId>-->
-        <!--            <version>4.0</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.google.inject.extensions</groupId>-->
-        <!--            <artifactId>guice-multibindings</artifactId>-->
-        <!--            <version>4.0</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.google.inject.extensions</groupId>-->
-        <!--            <artifactId>guice-assistedinject</artifactId>-->
-        <!--            <version>4.0</version>-->
-        <!--        </dependency>-->
+<!--                <dependency>-->
+<!--                    <groupId>com.google.inject</groupId>-->
+<!--                    <artifactId>guice</artifactId>-->
+<!--                    <version>4.0</version>-->
+<!--                </dependency>-->
+<!--                <dependency>-->
+<!--                    <groupId>com.google.inject.extensions</groupId>-->
+<!--                    <artifactId>guice-multibindings</artifactId>-->
+<!--                    <version>4.0</version>-->
+<!--                </dependency>-->
+<!--                <dependency>-->
+<!--                    <groupId>com.google.inject.extensions</groupId>-->
+<!--                    <artifactId>guice-assistedinject</artifactId>-->
+<!--                    <version>4.0</version>-->
+<!--                </dependency>-->
 
         <dependency>
             <groupId>com.google.inject</groupId>
@@ -66,11 +66,37 @@
             <artifactId>guice-assistedinject</artifactId>
             <version>4.2.3</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter-engine</artifactId>-->
+<!--            <version>5.5.2</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.5.2</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.6.4</version>
         </dependency>
     </dependencies>
 

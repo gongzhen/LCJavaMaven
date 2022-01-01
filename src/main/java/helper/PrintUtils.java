@@ -34,6 +34,14 @@ public class PrintUtils {
         }
     }
 
+    public static void printString(String arg, Object o1, Object o2) {
+        System.out.println(arg + ", " + o1.toString() + ", " + o2.toString());
+    }
+
+    public static void printString(String arg, Object object) {
+        System.out.println(arg + object.toString());
+    }
+
     public static void printString(String arg) {
         System.out.println(arg);
     }

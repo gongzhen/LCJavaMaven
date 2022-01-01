@@ -3,10 +3,7 @@ package helper;
 //import java.util.ImmutableCollections.AbstractImmutableMap;
 import java.io.Serializable;
 import java.util.*;
-/*
-import java.util.ImmutableCollections.Map1;
-import java.util.ImmutableCollections.MapN;
-*/
+
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -34,7 +31,7 @@ public interface GZMap<K, V> {
 
     Collection<V> values();
 
-    Set<Map.Entry<K, V>> entrySet();
+    Set<GZMap.GZEntry<K, V>> entrySet();
 
     boolean equals(Object var1);
 

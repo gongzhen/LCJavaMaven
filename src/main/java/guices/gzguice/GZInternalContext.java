@@ -1,6 +1,6 @@
 package guices.gzguice;
 
-import com.google.inject.internal.util.Maps;
+import com.google.common.collect.Maps;
 import com.google.inject.spi.Dependency;
 
 import java.util.Map;

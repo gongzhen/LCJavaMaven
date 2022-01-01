@@ -1,6 +1,6 @@
 package guices.gzguice;
 
-import annotations.GZNonNull;
+import annotations.gzannotations.GZNonNull;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -37,7 +37,6 @@ public class GuiceTestMain {
 
 
     static class BlueFoo {
-
     }
 
 }

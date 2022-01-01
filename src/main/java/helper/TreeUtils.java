@@ -1,16 +1,16 @@
 package helper;
 
-import leetcode.tree.LC1490;
-
+import helper.treeutil.MutableTree;
 import java.util.*;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class TreeUtils {
 
     public static void printTree(TreeNode node) {
         dfs(node);
+    }
+
+    public TreeUtils() {
     }
 
     public static void printTreePretty(TreeNode node) {
@@ -471,6 +471,60 @@ public class TreeUtils {
 
             return node1;
         };
+    }
+
+    public static Supplier<TreeNode> createTreeLC1469() {
+        return () -> {
+            TreeNode node1 = new TreeNode(1);
+            TreeNode node2 = new TreeNode(2);
+            TreeNode node3 = new TreeNode(3);
+            TreeNode node4 = new TreeNode(4);
+            TreeNode node5 = new TreeNode(5);
+            TreeNode node6 = new TreeNode(6);
+            TreeNode node7 = new TreeNode(7);
+
+            node7.left = node1;
+            node7.right = node4;
+
+            node1.left = node6;
+
+            node4.left = node5;
+            node4.right = node3;
+
+            node3.right = node2;
+
+            return node7;
+        };
+    }
+
+    public static Supplier<TreeNode> createTreeLC654() {
+        return () -> {
+            TreeNode node0 = new TreeNode(0);
+            TreeNode node1 = new TreeNode(1);
+            TreeNode node2 = new TreeNode(2);
+            TreeNode node3 = new TreeNode(3);
+            TreeNode node5 = new TreeNode(5);
+            TreeNode node6 = new TreeNode(6);
+
+            node6.left = node3;
+            node6.right = node5;
+
+            node3.right = node2;
+            node2.right = node1;
+
+            node5.left = node0;
+            return node6;
+        };
+    }
+
+    public static void testTree() {
+        MutableTree tree = MutableTree.builder().setNodes(new Integer[]{1, 2, 3, 4, 5}).build();
+        tree.printTree();
+        PrintUtils.printString("root:" + tree.getRoot());
+    }
+
+    public static void main(String[] args) {
+        testTree();
     }
 
 }

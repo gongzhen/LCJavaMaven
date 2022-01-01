@@ -3,17 +3,13 @@ package guices.gzguice;
 import com.google.inject.*;
 import com.google.inject.Module;
 import com.google.inject.internal.*;
-import com.google.inject.internal.util.ImmutableSet;
-import com.google.inject.internal.util.Iterables;
 import com.google.inject.internal.util.Stopwatch;
-import com.google.inject.spi.Dependency;
 import com.google.inject.spi.TypeConverterBinding;
 
 import java.lang.annotation.Annotation;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public final class GZInternalInjectorCreator {
 
@@ -51,7 +47,6 @@ public final class GZInternalInjectorCreator {
 
     /**
      * Sets the parent of the injector to-be-constructed.As a side effect, this sets this injector's
-     * stage to the stage of {@code parent} and sets {@link #requireExplicitBindings()} if the parent
      * injector also required them.
      */
     public GZInternalInjectorCreator parentInjector(GZInjectorImpl parent) {
@@ -210,7 +205,7 @@ public final class GZInternalInjectorCreator {
 //    }
 
     /** {@link Injector} exposed to users in {@link Stage#TOOL}. */
-    static class ToolStageInjector implements Injector {
+    static class ToolStageInjector implements GZInjector {
         private final Injector delegateInjector;
 
         ToolStageInjector(Injector delegateInjector) {
@@ -251,7 +246,8 @@ public final class GZInternalInjectorCreator {
             return delegateInjector.getScopeBindings();
         }
         public List<TypeConverterBinding> getTypeConverterBindings() {
-            return delegateInjector.getTypeConverterBindings();
+            // return delegateInjector.getTypeConverterBindings();
+            return new ArrayList<>();
         }
         public <T> Provider<T> getProvider(Key<T> key) {
             throw new UnsupportedOperationException(

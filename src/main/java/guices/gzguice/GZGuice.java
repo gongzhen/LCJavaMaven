@@ -1,10 +1,7 @@
 package guices.gzguice;
 
 import com.google.inject.Injector;
-import com.google.inject.InjectorBuilder;
-import com.google.inject.Module;
 import com.google.inject.Stage;
-import com.google.inject.internal.InternalInjectorCreator;
 
 import java.util.Arrays;
 
